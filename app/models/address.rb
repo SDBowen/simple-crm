@@ -3,5 +3,5 @@
 class Address < ApplicationRecord
   belongs_to :organization
 
-  validates :street, :city, :state, :zip, presence: true
+  validates :street, :city, :state, :zip, :organization, presence: true
 end
