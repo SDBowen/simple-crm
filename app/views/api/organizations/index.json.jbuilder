@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 json.organizations @organizations do |organization|
-  json.extract! organization, :id, :name, :domain, :phone
+  json.call(organization, :id, :name, :domain, :phone)
+  json.people_count Person.people_count(organization)
   json.partial! 'address', locals: { organization: organization }
 end
