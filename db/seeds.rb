@@ -32,4 +32,4 @@ def completed_message
   puts "#{Person.count} people added"
 end
 
-parse_csv("#{Rails.root}/db/crm_exercise_data.csv")
+parse_csv("#{Rails.root}/db/crm_data.csv")
