@@ -8,4 +8,12 @@ FactoryBot.define do
     phone { nil }
     organization
   end
+
+  factory :person_two, class: 'Person' do
+    name { 'Nellie Hyatt' }
+    job_title { 'Internal Mining Analyst' }
+    email_address { 'nhyatt@schimmel.net' }
+    phone { '605-207-1208' }
+    organization
+  end
 end

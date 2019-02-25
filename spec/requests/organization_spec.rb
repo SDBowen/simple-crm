@@ -16,8 +16,7 @@ RSpec.describe Api::OrganizationsController do
 
     it 'returns all organizations' do
       json = JSON.parse(response.body)
-
-      expect(json['organization'].length).to eq(2)
+      expect(json['organizations'].length).to eq(2)
     end
   end
 
@@ -36,11 +35,19 @@ RSpec.describe Api::OrganizationsController do
     end
 
     it 'returns one organization' do
-      expect(@json.length).to eq(6)
+      expect(@json.length).to eq(3)
     end
 
     it 'has all organization attributes' do
-      expect(@json.keys).to include('id', 'name', 'domain', 'phone', 'address', 'people_count')
+      expect(@json['organization'].keys).to include('id', 'name', 'domain', 'phone')
+    end
+
+    it 'has related address attribute' do
+      expect(@json).to include('address')
+    end
+
+    it 'has the people_count' do
+      expect(@json.keys).to include('people_count')
     end
   end
 end

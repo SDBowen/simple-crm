@@ -1,0 +1,13 @@
+# frozen_string_literal: true
+
+module Api
+  class PeopleController < ApplicationController
+    def index
+      @people = Person.all
+    end
+
+    def show
+      @person = Person.find(params[:id])
+    end
+  end
+end
