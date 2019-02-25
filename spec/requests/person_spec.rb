@@ -23,7 +23,7 @@ RSpec.describe Api::PeopleController do
   describe 'SHOW index' do
     before do
       @person = create(:person)
-      get '/api/people/1', as: :json
+      get "/api/people/#{@person.id}", as: :json
     end
 
     it 'returns a 200 status code' do

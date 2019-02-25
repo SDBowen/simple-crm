@@ -23,7 +23,7 @@ RSpec.describe Api::OrganizationsController do
   describe 'SHOW index' do
     before do
       @organization = create(:organization)
-      get '/api/organizations/1', as: :json
+      get "/api/organizations/#{@organization.id}", as: :json
     end
 
     it 'returns a 200 status code' do
