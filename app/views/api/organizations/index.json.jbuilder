@@ -2,5 +2,5 @@
 
 json.organization @organizations do |organization|
   json.extract! organization, :id, :name, :domain, :phone
-  organization.address.nil? ? (json.address nil) : (json.address organization.address, :id, :city, :state, :zip)
+  json.partial! 'address', locals: { organization: organization }
 end
